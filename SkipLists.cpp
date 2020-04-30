@@ -38,7 +38,7 @@ public:
     skiplist(int maxlvl);  /// nivelul maxim la care sa ajung.
     int random();
     node* CreateNode(int, int);
-  //  void PrintSkipList();
+    void PrintSkipList();
 
     void InsertNode(int x); //1
     void DeleteNode(int x); //2
@@ -78,7 +78,7 @@ node* skiplist::CreateNode(int key, int nivel)
     return n;
 };
 
-/*void skiplist::PrintSkipList()
+void skiplist::PrintSkipList()
 {
     cout<<'\n'<<"Cum arata Skiplist ul meu:"<<'\n';
     for (int i=0;i<=nivel;i++)
@@ -97,7 +97,7 @@ node* skiplist::CreateNode(int key, int nivel)
 
         cout << "\n";
 }
-*/
+
 void skiplist::InsertNode(int x)
 {
 
@@ -140,7 +140,7 @@ void skiplist::InsertNode(int x)
             n->back[i]=k[i];
             k[i]->next[i] = n;
         }
-       // cout << "Am inserat cu succes nodul " <<x << "\n";
+        cout << "Am inserat cu succes nodul " <<x << "\n";
     }
 };
 
