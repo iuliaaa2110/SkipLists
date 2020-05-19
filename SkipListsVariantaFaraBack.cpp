@@ -4,9 +4,12 @@
 #include <cstring>
 #include<time.h>
 #include<math.h>
-using namespace std;
-ifstream f("abce.in");
-ofstream g("abce.out");
+
+//using namespace std;
+
+std::ifstream f("abce.in");
+std::ofstream g("abce.out");
+
 class node
 {
 public:
@@ -76,22 +79,22 @@ node* skiplist::CreateNode(int key, int nivel)
 
 /*void skiplist::PrintSkipList()
 {
-    cout<<'\n'<<"Cum arata Skiplist ul meu:"<<'\n';
+    std::cout<<'\n'<<"Cum arata Skiplist ul meu:"<<'\n';
     for (int i=0;i<=nivel;i++)
     {
         node *n = header->next[i];
-        cout << "Level " << i << ": ";
+        std::cout << "Level " << i << ": ";
         while (n != NULL)
         {
-            cout << n->key<<" ";
+            std::cout << n->key<<" ";
             n = n->next[i];
         }
-        cout << "\n";
+        std::cout << "\n";
     }
 {1}
-    cout<<endl;
+    std::cout<<'\n';
 {1}
-        cout << "\n";
+        std::cout << "\n";
 }
 */
 void skiplist::InsertNode(int x)
@@ -129,7 +132,7 @@ void skiplist::InsertNode(int x)
             n->next[i] = k[i]->next[i];
             k[i]->next[i] = n;
         }
-        cout << "Am inserat cu succes nodul " <<x << "\n";
+        std::cout << "Am inserat cu succes nodul " <<x << "\n";
     }
 };
 
@@ -174,7 +177,7 @@ void skiplist::FindNode(int x)
 
     }
 
-    g<<ok<<endl;
+    g<<ok<<'\n';
 }
 
 node* skiplist::FindCMMic(int x)
@@ -218,7 +221,7 @@ void skiplist::PrintXtoY(int X,int Y)
         g<<x->key<<" ";
         x=x->next[0];
     }
-    g<<endl;
+    g<<'\n';
 
  }
 
@@ -244,19 +247,19 @@ int main()
         if(x==4)
             {
             node*p=lista.FindCMMare(y);
-            g<<p->key<<endl;
+            g<<p->key<<'\n';
             }
         if(x==5)
             {
             node*p=lista.FindCMMic(y);
-            g<<p->key<<endl;
+            g<<p->key<<'\n';
             }
         if(x==6)
         {
             f>>z;
             lista.PrintXtoY(y,z);
         }
-        cout<<x<<endl;
+        std::cout<<x<<'\n';
     }
     /*skiplist lista(100);        //parametrul= maxlvl
     lista.InsertNode(3);
@@ -269,30 +272,30 @@ int main()
     lista.InsertNode(26);
     lista.InsertNode(21);
     lista.InsertNode(12);
-   cout<<1; lista.PrintSkipList();
+   std::cout<<1; lista.PrintSkipList();
     lista.DeleteNode(17);
-    cout<<2;lista.PrintSkipList();
+    std::cout<<2;lista.PrintSkipList();
     lista.DeleteNode(9);
-   cout<<3; lista.PrintSkipList();
+   std::cout<<3; lista.PrintSkipList();
     lista.DeleteNode(3);
-    cout<<4;lista.PrintSkipList();
+    std::cout<<4;lista.PrintSkipList();
     lista.DeleteNode(25);
-    cout<<5;lista.PrintSkipList();
+    std::cout<<5;lista.PrintSkipList();
    lista.InsertNode(100);
     lista.InsertNode(15);
     lista.DeleteNode(2);
-    cout<<6; lista.PrintSkipList();
+    std::cout<<6; lista.PrintSkipList();
     lista.DeleteNode(1);
-     cout<<7;lista.PrintSkipList();
+     std::cout<<7;lista.PrintSkipList();
     lista.DeleteNode(120);
-   cout<<8; lista.PrintSkipList();
+   std::cout<<8; lista.PrintSkipList();
    lista.FindNode(17);
    lista.FindNode(3);
    lista.FindNode(26);
    lista.FindNode(100);
    lista.FindNode(21);*/
- /* // cout<<endl<<lista.FindCMMic(6)->key;
- // cout<<endl<<lista.FindCMMare(1001)->key<<endl;
+ /* // std::cout<<'\n'<<lista.FindCMMic(6)->key;
+ // std::cout<<'\n'<<lista.FindCMMare(1001)->key<<'\n';
    lista.PrintXtoY(2,26);*/
     return 0;
 }
